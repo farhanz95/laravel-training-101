@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-	<form action="{{ route('post.store') }}" method="POST">
+	<form action="{{ route('posts.store') }}" method="POST">
 	
 	{{ csrf_field() }}
 	{{ method_field('PUT') }}
@@ -43,7 +43,7 @@
 				<td></td>
 				<td>
 					<div class="btn-group">
-						<a href="{{ route('post.index')}}" class="btn btn-sm btn-danger">
+						<a href="{{ route('posts.index')}}" class="btn btn-sm btn-danger">
 							Back
 						</a>
 						<button class="btn btn-sm btn-success">Create</button>

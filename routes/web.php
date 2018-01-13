@@ -19,16 +19,56 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/post', 'PostController@index')->name('post.index');
+Route::get('/posts', 'PostController@index')->name('posts.index');
 
-Route::get('/post/create', 'PostController@create')->name('post.create');
+Route::get('/posts/create', 'PostController@create')->name('posts.create');
 
-Route::get('/post/edit/{id}', 'PostController@edit')->name('post.edit');
+Route::get('/posts/edit/{id}', 'PostController@edit')->name('posts.edit');
 
-Route::get('/post/show/{id}', 'PostController@show')->name('post.show');
+Route::get('/posts/show/{id}', 'PostController@show')->name('posts.show');
 
-Route::put('/post/{id}', 'PostController@update')->name('post.update');
+Route::put('/posts/{id}', 'PostController@update')->name('posts.update');
 
-Route::put('/post', 'PostController@store')->name('post.store');
+Route::put('/posts', 'PostController@store')->name('posts.store');
 
-Route::delete('/post/{id}', 'PostController@destroy')->name('post.destroy');
+Route::delete('/posts/{id}', 'PostController@destroy')->name('posts.destroy');
+
+Route::get(
+	'/users', 
+	'UserController@index')
+->name('users.index');
+
+Route::get(
+	'/users/create',
+	'UserController@create'
+)->name('users.create');
+
+Route::put(
+	'users/store', 
+	'UserController@store'
+)->name('users.store');
+
+Route::get(
+	'/users/{id}/show',
+	'UserController@show'
+)->name('users.show');
+
+Route::get(
+	'/users/{id}/edit',
+	'UserController@edit'
+)->name('users.edit');
+
+Route::put(
+	'users/{id}', 
+	'UserController@update'
+)->name('users.update');
+
+Route::delete(
+	'users/{id}',
+	'UserController@destroy'
+)->name('users.destroy');
+
+Route::get(
+	'account/activate/{token}', 
+	'Auth\ActivationController@activate'
+)->name('account.activate');

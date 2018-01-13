@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-	<form action="{{ route('posts.update', $post->id) }}" method="POST">
+	<form action="{{ route('users.update', $user->id) }}" method="POST">
 	
 	{{ csrf_field() }}
 	{{ method_field('PUT') }}
@@ -13,12 +13,12 @@
 				<td>
 					<input type="text" 
 					class="form-control" 
-					name="post_name"
-					value="{{ $post->post_name }}">
+					name="name"
+					value="{{ $user->name }}">
 
-					@if ($errors->has('post_name'))
+					@if ($errors->has('name'))
 						<span class="has-block">
-							<strong>{{ $errors->first('post_name') }}</strong>
+							<strong>{{ $errors->first('name') }}</strong>
 						</span>
 					@endif
 				</td>
@@ -28,21 +28,15 @@
 				<td>
 					<input type="text" 
 					class="form-control" 
-					name="post_email" disabled
-					value="{{ $post->post_email }}">
-
-					@if ($errors->has('post_email'))
-						<span class="has-block">
-							<strong>{{ $errors->first('post_email') }}</strong>
-						</span>
-					@endif
+					name="email" disabled
+					value="{{ $user->email }}">
 				</td>
 			</tr>
 			<tr>
 				<td></td>
 				<td>
 					<div class="btn-group">
-						<a href="{{ route('posts.index')}}" class="btn btn-sm btn-danger">
+						<a href="{{ route('users.index')}}" class="btn btn-sm btn-danger">
 							Back
 						</a>
 						<button class="btn btn-sm btn-success">Update</button>

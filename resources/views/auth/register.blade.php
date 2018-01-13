@@ -75,3 +75,9 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+    swal("Here You Can Register Your Account");
+</script>
+@endpush

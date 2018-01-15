@@ -76,8 +76,8 @@
 </div>
 @endsection
 
-@push('scripts')
+{{-- @push('scripts')
 <script>
     swal("Here You Can Register Your Account");
 </script>
-@endpush
+@endpush --}}

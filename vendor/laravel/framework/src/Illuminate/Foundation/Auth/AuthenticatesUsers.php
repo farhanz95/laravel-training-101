@@ -27,7 +27,7 @@ trait AuthenticatesUsers
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Http\JsonResponse
      */
     public function login(Request $request)
-    {
+    { 
         $this->validateLogin($request);
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
